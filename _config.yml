@@ -1,12 +1,13 @@
-theme: minima
-title: CTIC - SJE - IFSC
-email: ctic.sje@listas.ifsc.edu.br
-description: >
-  Documentação unificada dos repositórios.
+---
 baseurl: ""
-url: 'https://ctic-sje-ifsc.github.io/'
-github_username: ctic-sje-ifsc
-include: ["_pages"]
+defaults:
+  -
+    scope:
+      path: assets/img
+    values:
+      image: true
+description: "Documentação unificada dos repositórios.\n"
+email: ctic.sje@listas.ifsc.edu.br
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -18,3 +19,9 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+github_username: ctic-sje-ifsc
+include:
+  - _pages
+theme: minima
+title: "CTIC - SJE - IFSC"
+url: "https://ctic-sje-ifsc.github.io/"
