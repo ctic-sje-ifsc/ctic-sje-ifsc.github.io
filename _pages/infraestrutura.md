@@ -7,15 +7,16 @@ title: Infraestrutura
 # Infraestrutura de TIC do IFSC câmpus São José
 
 A CTIC atualmente administra em sua infraestrutura:
-* 14 Servidores físicos.
-* 3 Lâminas (_Blades_) HP BL465c-S em um _enclosure_ HP C7000.
-* _Storage_ EMC VNX 5300 com 7 barramentos e 125 discos.
-* 48 _Switches_ gerenciáveis (e outros não gerenciáveis).
-* _Firewall_ PFSense com redundância ativa de _hardware_ via [CARP](https://docs.netgate.com/pfsense/en/latest/highavailability/index.html).
-* 27 _APs_ Cisco séries 1600 e 2600.
-* 380 Computadores (gerenciados em [IaC](https://pt.wikipedia.org/wiki/Infraestrutura_como_C%C3%B3digo) [com Ansible](https://github.com/ctic-sje-ifsc/ansible)).
-* Central telefônica com aproximadamente 70 ramais.
-* +30 Servidores Virtuais ([página Web](http://sj.ifsc.edu.br), [wiki](http://wiki.sj.ifsc.edu.br), câmeras e outros).
+
+- 14 Servidores físicos.
+- 3 Lâminas (_Blades_) HP BL465c-S em um _enclosure_ HP C7000.
+- _Storage_ EMC VNX 5300 com 7 barramentos e 125 discos.
+- 48 _Switches_ gerenciáveis (e outros não gerenciáveis).
+- _Firewall_ PFSense com redundância ativa de _hardware_ via [CARP](https://docs.netgate.com/pfsense/en/latest/highavailability/index.html).
+- 27 _APs_ Cisco séries 1600 e 2600.
+- 380 Computadores (gerenciados em [IaC](https://pt.wikipedia.org/wiki/Infraestrutura_como_C%C3%B3digo) [com Ansible](https://github.com/ctic-sje-ifsc/ansible)).
+- Central telefônica com aproximadamente 70 ramais.
+- +30 Servidores Virtuais ([página Web](http://sj.ifsc.edu.br), [wiki](http://wiki.sj.ifsc.edu.br), câmeras e outros).
 
 ## Segurança e estabilidade da nossa rede hoje
 
@@ -34,16 +35,17 @@ A solução de _firewall_ que utilizamos é o de [redundância ativa](https://do
 Essa demanda foi baseada no seguinte questionamento: "_E se/quando nosso firewall Cisco ASA queimar/dar problema?_".
 Dentro do IFSC alguns câmpus já utilizavam o PFSense como _firewall_ e com excelentes resultados. Com isso, primeiramente substituímos o firewall atual para o PFSense para poder implantar alta disponibilidade. Segue a descrição de _hardware_ dos dois servidores (ambos foram doados pela reitoria por estarem obsoletos):
 
-* Master - IBM System x3200 M2:
-  * Processador: Intel(R) Xeon(R) CPU X3320 @ 2.50GHz (4 CPUs: 1 package(s) x 4 core(s))
-  * Memória: 8 GB
-    * Load average: 0.30, 0.43, 0.37
-    * CPU usage: 8%
-    * Memory usage	6% of 8155 MiB
+- Master - IBM System x3200 M2:
 
-* Backup - IBM xSeries 206m:
-  * Processador: Intel(R) Pentium(R) D CPU 3.00GHz (2 CPUs: 1 package(s) x 2 core(s))
-  * Memória 2 GB
+  - Processador: Intel(R) Xeon(R) CPU X3320 @ 2.50GHz (4 CPUs: 1 package(s) x 4 core(s))
+  - Memória: 8 GB
+    - Load average: 0.30, 0.43, 0.37
+    - CPU usage: 8%
+    - Memory usage 6% of 8155 MiB
+
+- Backup - IBM xSeries 206m:
+  - Processador: Intel(R) Pentium(R) D CPU 3.00GHz (2 CPUs: 1 package(s) x 2 core(s))
+  - Memória 2 GB
 
 Fizemos o [registro em vídeo](https://youtu.be/jkS7ZbTbtkA) da PoC de um possível problema com o _master firewall_:
 
@@ -70,7 +72,6 @@ Utilizamos a implementação de [Ceph integrada do Proxmox](https://pve.proxmox.
 O [CRUSH map](https://docs.ceph.com/docs/jewel/rados/operations/crush-map/) foi configurado de modo a implementar um domínio de falha com o agrupamento de servidores do tipo _blade_ que fazem parte do mesmo chassi. Assim, é garantido que as réplicas de dados não fiquem todas no mesmo domínio de falha, e caso ocorra problema em alguma _blade_ (os nos seus discos mapeados do _storage_) não haverá perda de dados e indisponibilidade dos serviços.
 ![CRUSH Map e Domínio de Falhas](/assets/img/crush_map.png)
 
-
 ## _Cluster_ de Virtualização - Proxmox
 
 O cluster de virtualização foi criado a partir de máquinas com o Proxmox, sendo esse instalado seguindo a [documentação de cluster do Proxmox](https://pve.proxmox.com/pve-docs/chapter-pvecm.html).
@@ -91,10 +92,9 @@ O armazenamento utilizado pelo _cluster_ de virtualização (discos de VM, _snap
 
 O "_storage_" `Backup_NFS` é um armazenamento do tipo NFS, provido por uma das máquinas conectado ao nosso _storage_ (físico), onde fazemos os _full backups_ das VMs semanalmente.
 
-O [cluster possui a configuração](https://pve.proxmox.com/pve-docs/chapter-ha-manager.html) para fornecer **alta disponibilidade**  nas VMs:
+O [cluster possui a configuração](https://pve.proxmox.com/pve-docs/chapter-ha-manager.html) para fornecer **alta disponibilidade** nas VMs:
 
 ![HA](/assets/img/ha_cluster.png)'
-
 
 ## "_Cluster_ de Contêiner" / Nuvem privada - Kubernetes + Rancher
 
@@ -172,7 +172,3 @@ spec:
     path: /nfs_kubernetes/kubernetes/ifsc/sje/a/home
 
 ```
-
-## Repositório
-
-O repositório é [https://github.com/ctic-sje-ifsc/infraestrutura](https://github.com/ctic-sje-ifsc/infraestrutura).
