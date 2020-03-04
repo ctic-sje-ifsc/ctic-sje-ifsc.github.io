@@ -1,6 +1,7 @@
 ---
 permalink: /cluster_k8s_rke.html
 layout: default
+title: Cluster Kubernetes via RKE
 ---
 
 # Cluster Kubernetes via RKE
@@ -64,3 +65,7 @@ Depois, iniciar o serviço do Rancher via `helm`:
 ```bash
 helm install rancher-stable/rancher --name rancher --namespace cattle-system --set hostname=projetos.sj.ifsc.edu.br --set ingress.tls.source=tls-rancher-ingress
 ```
+
+## Repositório
+
+O repositório é [https://github.com/ctic-sje-ifsc/cluster_k8s_rke](https://github.com/ctic-sje-ifsc/cluster_k8s_rke).
