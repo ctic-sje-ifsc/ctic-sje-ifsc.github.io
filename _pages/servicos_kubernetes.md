@@ -17,8 +17,7 @@ Por que migrar para contêiner e Kubernetes?
 - Controle de versão + moderação + automação de testes = CI/CD.
 - Alta disponibilidade, fácil, fácil.
 - Auto escalonamento, fácil, fácil.
-- Google usa há 15 anos em todos os seus serviços, bilhões de contêineres por
-  semana. Se eles podem, nós também pode(re)mos.
+- Google usa há pelo menos 15 anos em todos os seus serviços, bilhões de contêineres por semana. Se eles podem, nós também pode(re)mos.
 
 ## Estrutura do projeto macro
 
@@ -167,9 +166,7 @@ ssh -XC seulogin@nyqlab.sj.ifsc.edu.br -p 2225
 
 Utilizada a implementação [Mosquitto](https://mosquitto.org/) para MQTT _Broker_.
 
-Para o serviço, que por enquanto opera apenas com protocolos MQTT v3.1 e v3.1.1,
-foi criada uma imagem
-[mosquitto](https://github.com/ctic-sje-ifsc/imagens/tree/master/mosquitto).
+Para o serviço, que por enquanto opera apenas com protocolos MQTT v3.1 e v3.1.1, foi criada uma imagem [mosquitto](https://github.com/ctic-sje-ifsc/imagens/tree/master/mosquitto).
 
 [![](https://images.microbadger.com/badges/image/cticsjeifsc/mosquitto.svg)](https://microbadger.com/images/cticsjeifsc/mosquitto "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/cticsjeifsc/mosquitto.svg)](https://microbadger.com/images/cticsjeifsc/mosquitto "Get your own version badge on microbadger.com")

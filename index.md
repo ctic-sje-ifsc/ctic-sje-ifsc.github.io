@@ -3,7 +3,11 @@ permalink: /
 layout: default
 ---
 
-A [infraestrutura](/infraestrutura.html) do câmpus mudou significativamente nos últimos anos. O gerenciamento de configuração dos servidores procurou, assim, acompanhar essa evolução. Inicialmente, foi usado o [CoreOS/Tectonic](https://github.com/ctic-sje-ifsc/baremetal_cluster_coreos) com `cloud-config` e instalação manual do Kubernetes nas máquinas físicas (repositório arquivado). Depois, foi adotado o [Rancher](https://github.com/ctic-sje-ifsc/baremetal_rke_kubernetes) para as mesmas máquinas físicas (repositório arquivado):
+# CTIC - SJE - IFSC
+
+A Coordenadoria de Tecnologia da Informação e Comunicação (CTIC) do Instituto Federal de Santa Catarina (IFSC) câmpus São José (SJE) tem como política publicar todo o código fonte da infraestrutura (Infraestrutura como Código - IaC) - sempre que não ferir a segurança da informação ou legislação vigente. O principal objetivo é compartilhar a experiência com as outras CTICs do Instituto, além de dar transparência do serviço prestado ao público em geral: alunos, professores, servidores etc.
+
+A [infraestrutura](/infraestrutura.html) do câmpus mudou significativamente nos últimos anos, migrando do modelo tradicional para IaC. O gerenciamento de configuração dos servidores procurou, assim, acompanhar essa evolução. Inicialmente, foi usado o [CoreOS/Tectonic](https://github.com/ctic-sje-ifsc/baremetal_cluster_coreos) com `cloud-config` e instalação manual do Kubernetes nas máquinas físicas (repositório arquivado). Depois, foi adotado o [Rancher](https://github.com/ctic-sje-ifsc/baremetal_rke_kubernetes) para as mesmas máquinas físicas (repositório arquivado):
 - RancherOS como sistema operacional e configurado, assim como o CoreOS, com `cloud-config`.
 - RKE como ferramenta de implantação do Kubernetes.
 - Rancher como interface (_dashboard_) da nuvem privada.
