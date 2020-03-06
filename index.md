@@ -5,14 +5,14 @@ layout: default
 
 # CTIC - SJE - IFSC
 
-A Coordenadoria de Tecnologia da Informação e Comunicação (CTIC) do Instituto Federal de Santa Catarina (IFSC) câmpus São José (SJE) tem como política publicar todo o código fonte da infraestrutura (Infraestrutura como Código - IaC) - sempre que não ferir a segurança da informação ou legislação vigente. O principal objetivo é compartilhar a experiência com as outras CTICs do Instituto, além de dar transparência do serviço prestado ao público em geral: alunos, professores, servidores etc.
+A Coordenadoria de Tecnologia da Informação e Comunicação (CTIC) do Instituto Federal de Santa Catarina (IFSC) câmpus São José (SJE) entende como boa prática publicar todo o código fonte da infraestrutura (Infraestrutura como Código - IaC) - desde que não afete a segurança da informação ou legislação vigente. O principal objetivo é compartilhar a experiência com as outras CTICs do Instituto, além de dar transparência do serviço prestado ao público em geral: alunos, professores, servidores etc.
 
-A [infraestrutura](/infraestrutura.html) do câmpus mudou significativamente nos últimos anos, migrando do modelo tradicional para IaC. O gerenciamento de configuração dos servidores procurou, assim, acompanhar essa evolução. Inicialmente, foi usado o [CoreOS/Tectonic](https://github.com/ctic-sje-ifsc/baremetal_cluster_coreos) com `cloud-config` e instalação manual do Kubernetes nas máquinas físicas (repositório arquivado). Depois, foi adotado o [Rancher](https://github.com/ctic-sje-ifsc/baremetal_rke_kubernetes) para as mesmas máquinas físicas (repositório arquivado):
+Nos últimos anos, a [infraestrutura](/infraestrutura.html) do câmpus mudou significativamente, migrando do modelo tradicional para IaC. Inicialmente, foi usado o [CoreOS/Tectonic](https://github.com/ctic-sje-ifsc/baremetal_cluster_coreos) com `cloud-config` e instalação manual do Kubernetes nas máquinas físicas. Depois, foi adotado o [Rancher](https://github.com/ctic-sje-ifsc/baremetal_rke_kubernetes) para as mesmas máquinas físicas:
 - RancherOS como sistema operacional e configurado, assim como o CoreOS, com `cloud-config`.
 - RKE como ferramenta de implantação do Kubernetes.
 - Rancher como interface (_dashboard_) da nuvem privada.
 
-Com o ambiente em produção, a CTIC adotou o Proxmox como ferramenta de virtualização.
+Com o ambiente em produção como Rancher, a CTIC adotou o Proxmox como ferramenta de virtualização.
 
 Também estabeleceu-se o [Ansible](/ansible.html) como ferramenta de gerenciamento de configuração das estações de trabalho. Assim, os vários projetos foram integrados, culminando com a automatização das máquinas virtuais com [Ansible, RKE e Rancher](/cluster_k8s_rke.html).
 
