@@ -65,6 +65,7 @@ Cada máquina física possui discos que fazem parte do _cluster_ de armazenament
 
 É utilizada a implementação de [Ceph integrada do Proxmox](https://pve.proxmox.com/pve-docs/chapter-pveceph.html).
 O [CRUSH map](https://docs.ceph.com/docs/jewel/rados/operations/crush-map/) foi configurado de modo a implementar um domínio de falha com o agrupamento de servidores do tipo _blade_ que fazem parte do mesmo chassi. Assim, é garantido que as réplicas de dados não fiquem todas no mesmo domínio de falha, e caso ocorra problema em alguma _blade_ (os nos seus discos mapeados do _storage_) não haverá perda de dados ou indisponibilidade dos serviços.
+
 ![CRUSH Map e Domínio de Falhas](/assets/img/crush_map.png)
 
 ## _Cluster_ de Virtualização: Proxmox
