@@ -24,7 +24,7 @@ ansible-playbook -i inventory_ansible/servidores/host ansible/servidores/vms_nuv
 vmnuvemX IN A 191.36.8.X
 ```
 
-4. O próximo passo é adicionar o nó no arquivo [cluster.yml](cluster.yml):
+4. O próximo passo é adicionar o nó no arquivo [cluster.yml](https://github.com/ctic-sje-ifsc/cluster_k8s_rke/blob/master/cluster.yml):
 
 ```yml
 - address: vmnuvemX.sj.ifsc.edu.br

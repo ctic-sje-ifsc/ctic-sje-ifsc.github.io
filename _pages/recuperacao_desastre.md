@@ -33,7 +33,7 @@ Quando já possua acesso via ssh (`ssh rancher@nodenuvemX`) a todos os nós, pod
 ./rke up --config cluster.yml
 ```
 
-Baseado nas configurações oficiais de [Backups and Disaster Recovery](https://rancher.com/docs/rke/v0.1.x/en/etcd-snapshots/) e [Creating Backups—High Availability Installs](https://rancher.com/docs/rancher/v2.x/en/backups/backups/ha-backups/) foi configurado o serviço de instantâneos (_snapshots_) recorrentes do `etcd` no [cluster.yml](cluster.yml). Os instantâneos são sincronizados diariamente no servidor de monitoramento/_backup_ em `/backup/etcd_kubernetes` e gravados em fita.
+Baseado nas configurações oficiais de [Backups and Disaster Recovery](https://rancher.com/docs/rke/v0.1.x/en/etcd-snapshots/) e [Creating Backups—High Availability Installs](https://rancher.com/docs/rancher/v2.x/en/backups/backups/ha-backups/) foi configurado o serviço de instantâneos (_snapshots_) recorrentes do `etcd` no [cluster.yml](https://github.com/ctic-sje-ifsc/cluster_k8s_rke/blob/master/cluster.yml). Os instantâneos são sincronizados diariamente no servidor de monitoramento/_backup_ em `/backup/etcd_kubernetes` e gravados em fita.
 
 Para fazer a recuperação do _backup_ deve-se utilizar os passos descritps em [Restoring Backups—High Availability Installs](https://rancher.com/docs/rancher/v2.x/en/backups/restorations/ha-restoration/).
 
