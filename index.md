@@ -19,4 +19,4 @@ Com o ambiente em produção como Rancher, a CTIC adotou o Proxmox como ferramen
 
 ## Serviços
 
-Em relação ao serviços, há as [imagens personalizadas](/container_imagens.html) dos [serviços na nuvem privada](/servicos_kubernetes.html). Assim como as máquinas virtuais, os serviços foram projetados para rápida [recuperação de desastre](/recuperacao_desastre.html).
+Em relação ao serviços, há as [imagens personalizadas](/container_imagens.html) dos [serviços na nuvem privada](/servicos_kubernetes.html). Assim como as máquinas virtuais, os serviços foram projetados de acordo com [boas práticas](/boas_praticas.html) e atendimento a rápida [recuperação de desastre](/recuperacao_desastre.html).
