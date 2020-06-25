@@ -37,7 +37,8 @@ As boas práticas aqui descritas são excertos das fontes pesquisadas, de forma 
 
 ### [Definição das imagens Docker](/container_imagens.html)
 
-1. Preferir sempre a menor imagem possível: Alpine, depois Debian Slim, depois os demais… 0. Verificar se a instalação dos pacotes (`apk`, `apt`) irá gerar uma imagem muito grande, e daí considerar outra distribuição mais adequada/pronta.
+1. Preferir sempre a menor imagem possível: Alpine, depois Debian Slim, depois os demais…
+1. Verificar se a instalação dos pacotes (`apk`, `apt`) irá gerar uma imagem muito grande, e daí considerar outra distribuição mais adequada/pronta.
 1. Criar um _webhook_ no [Docker Hub](https://hub.docker.com) para criar/atualizar a imagem  e salvar a URL no repositório privado de _webhooks_.
 1. Quando usado código de terceiro, preferir sempre a política de atualização deste. Quando houver dúvidas na política, fixar as imagens pelo número primário (_major_) e acompanhar regularmente (assinatura de _email_, _changelog_ etc.) a publicação de novas versões. A leitura das modificações é importante por dois motivos: compatibilidade com a(s) versão(ões) anterior(es) e possível mudança nos parâmetros padrão de configuração.
 1. Quando houver uma atualização de versão, a política mais simples é a de encerrar os atuais pods e esperar o sistema (`ReplicaSet`) convergir para a quantidade de pods definida.
