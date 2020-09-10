@@ -59,6 +59,7 @@ As boas práticas aqui descritas são excertos das fontes pesquisadas, de forma 
 1. Ingresso: `Ingress`;
 1. Serviço: `Service`;
 1. Pods: `Deployment`, `StatefulSet`, `DaemonSet`.
+1. Tarefas: `Job`, `CronJob`.
 
 ### Atualização de ambiente
 
